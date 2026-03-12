@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI SKILL SCAN — AI-Powered Career Assessment Test</title>
+    <meta name="description" content="AI SKILL SCAN Career Assessment is an advanced AI-based psychometric test that evaluates aptitude, personality, skills, strengths, weaknesses, and career interests to help you make informed career decisions.">
+    <meta name="keywords" content="career assessment, AI skill scan, psychometric test, career guidance, aptitude test, personality test, career counseling, student career test">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <!-- ===== NAV OVERLAY (mobile) ===== -->
+    <div class="nav-overlay"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container header__inner">
+            <!-- Logo -->
+            <a href="index.html" class="header__logo">
+                <img src="assets/AiSkilScan.jpg" alt="AI Skill Scan Logo">
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html" class="nav__link nav__link--active">Home</a>
+                <a href="about.html" class="nav__link">About the Test</a>
+
+                <!-- Assessments Dropdown -->
+                <div class="nav__dropdown">
+                    <a href="assessments.html" class="nav__link nav__dropdown-toggle">
+                        Assessments
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </a>
+                    <div class="nav__dropdown-menu">
+                        <a href="assessments.html#high-school">Career Scan for High School Students</a>
+                        <a href="assessments.html#higher-secondary">Career Scan for Higher Secondary Students</a>
+                        <a href="assessments.html#graduates">Career Scan for Graduates</a>
+                        <a href="assessments.html#employee">Employee Diagnostic Test</a>
+                    </div>
+                </div>
+
+                <a href="how-it-works.html" class="nav__link">How It Works</a>
+                <a href="sample-report.html" class="nav__link">Sample Report</a>
+                <a href="schools.html" class="nav__link">For Schools</a>
+                <a href="faq.html" class="nav__link">FAQ</a>
+                <a href="contact.html" class="nav__link">Contact</a>
+
+                <!-- Mobile CTA -->
+                <div class="header__cta">
+                    <a href="take-test.html" class="btn btn--primary">Take a Test</a>
+                </div>
+            </nav>
+
+            <!-- Desktop CTA -->
+            <div class="header__cta">
+                <a href="take-test.html" class="btn btn--primary">Take a Test</a>
+            </div>
+
+            <!-- Hamburger -->
+            <button class="hamburger" aria-label="Toggle menu">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== 1. HERO SECTION ===== -->
+        <section class="hero">
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <h1>Discover the Right Career Path <small style="font-size:0.6em; font-weight:500;">with</small><span>AI-Powered Skill Assessment</span></h1>
+                    <p>AI SKILL SCAN Career Assessment is an advanced AI-based psychometric test that evaluates aptitude, personality, skills, and career potential.</p>
+                    <div class="hero__buttons">
+                        <a href="take-test.html" class="btn btn--primary">Take a Test</a>
+                        <a href="how-it-works.html" class="btn btn--outline">Learn How It Works</a>
+                    </div>
+                </div>
+                <div class="hero__graphic">
+                    <div class="hero__graphic-placeholder">
+                        <!-- Decorative AI Brain SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714a2.25 2.25 0 0 0 .659 1.591L19 14.5m-4.75-11.396c.251.023.501.05.75.082M12 3v5.714m0 0a2.25 2.25 0 0 1-.659 1.591L7.5 14.25m4.5-3.536a2.25 2.25 0 0 0 .659 1.591L16.5 14.25M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12H18m-2.227-4.773 1.591-1.591M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 2. WHAT IS AI SKILL SCAN ===== -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">What is AI SKILL SCAN?</h2>
+                <p class="section-subtitle">AI SKILL SCAN is an advanced AI-based psychometric career assessment system that helps individuals understand themselves better and make informed career decisions.</p>
+
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+                    <!-- Aptitude -->
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Aptitude</p>
+                    </div>
+                    <!-- Personality -->
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Personality</p>
+                    </div>
+                    <!-- Skills -->
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Skills</p>
+                    </div>
+                    <!-- Strengths -->
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Strengths</p>
+                    </div>
+                    <!-- Weaknesses -->
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Weaknesses</p>
+                    </div>
+                    <!-- Career Interests -->
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Career Interests</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 3. WHY CAREER ASSESSMENT IS IMPORTANT ===== -->
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section-title">Why Career Assessment is Important</h2>
+                <p class="section-subtitle">Making the right career choice is one of the most important decisions in life. A career assessment helps you make that decision with confidence.</p>
+
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg>
+                        </div>
+                        <h3 class="card__title">Identify Natural Abilities</h3>
+                        <p class="card__text">Discover your innate talents and abilities that can guide you toward the right career path.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+                        </div>
+                        <h3 class="card__title">Choose Suitable Career Streams</h3>
+                        <p class="card__text">Get data-driven recommendations on which career streams align with your profile and potential.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>
+                        </div>
+                        <h3 class="card__title">Understand Strengths &amp; Weaknesses</h3>
+                        <p class="card__text">Gain clear insights into your strong areas and areas that need development for career success.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+                        </div>
+                        <h3 class="card__title">Avoid Wrong Career Decisions</h3>
+                        <p class="card__text">Prevent costly career mistakes by understanding your fit before committing to a path.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"/></svg>
+                        </div>
+                        <h3 class="card__title">Build a Clear Career Roadmap</h3>
+                        <p class="card__text">Get a structured plan with actionable steps to achieve your career goals effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 4. ASSESSMENT CATEGORIES ===== -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Assessment Categories</h2>
+                <p class="section-subtitle">Choose the career assessment that matches your current stage and discover the ideal career path for you.</p>
+
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                    <!-- High School -->
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+                        </div>
+                        <h3 class="card__title">Career Scan for High School Students</h3>
+                        <p class="card__text">Identify natural talents, personality traits, aptitude areas, learning styles, and career interests to decide future academic direction.</p>
+                        <a href="assessments.html#high-school" class="card__link">Learn More &rarr;</a>
+                    </div>
+                    <!-- Higher Secondary -->
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg>
+                        </div>
+                        <h3 class="card__title">Career Scan for Higher Secondary Students</h3>
+                        <p class="card__text">Get guidance on degree programs, professional courses, and specialization areas based on aptitude and personality.</p>
+                        <a href="assessments.html#higher-secondary" class="card__link">Learn More &rarr;</a>
+                    </div>
+                    <!-- Graduates -->
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 17.25c-2.97 0-5.81-.54-8.427-1.524a2.198 2.198 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 2.25 13.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 12.75 3h-1.5a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>
+                        </div>
+                        <h3 class="card__title">Career Scan for Graduates</h3>
+                        <p class="card__text">Determine the best career sectors, professional strengths, skill development needs, and suitable job roles.</p>
+                        <a href="assessments.html#graduates" class="card__link">Learn More &rarr;</a>
+                    </div>
+                    <!-- Employee -->
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/></svg>
+                        </div>
+                        <h3 class="card__title">Employee Diagnostic Test</h3>
+                        <p class="card__text">Help organizations assess employee strengths, identify skill gaps, plan training programs, and improve productivity.</p>
+                        <a href="assessments.html#employee" class="card__link">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 5. HOW THE TEST WORKS ===== -->
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section-title">How the Test Works</h2>
+                <p class="section-subtitle">Our simple 4-step process makes it easy to discover your ideal career path.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step__number">1</div>
+                        <h3 class="step__title">Register / Login</h3>
+                        <p class="step__text">Create your account or log in to get started with the assessment.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">2</div>
+                        <h3 class="step__title">Take Online Test</h3>
+                        <p class="step__text">Complete the AI-powered psychometric test from any device, anywhere.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">3</div>
+                        <h3 class="step__title">AI Analysis</h3>
+                        <p class="step__text">Our AI engine analyzes your responses using advanced algorithms.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">4</div>
+                        <h3 class="step__title">Get Career Report</h3>
+                        <p class="step__text">Receive a detailed career assessment report with personalized recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 6. WHAT YOU WILL GET IN THE REPORT ===== -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">What You Will Get in the Report</h2>
+                <p class="section-subtitle">Your personalized career assessment report includes comprehensive insights to guide your career journey.</p>
+
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-item__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="feature-item__title">Aptitude Analysis</h4>
+                            <p class="feature-item__text">Detailed breakdown of your cognitive abilities and logical reasoning capabilities.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="feature-item__title">Personality Profile</h4>
+                            <p class="feature-item__text">In-depth analysis of your personality traits and behavioral tendencies.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="feature-item__title">Skill Strengths</h4>
+                            <p class="feature-item__text">Identification of your top skills and how they match industry requirements.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="feature-item__title">Areas of Improvement</h4>
+                            <p class="feature-item__text">Clear guidance on skills and areas where you can improve for career growth.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="feature-item__title">Career Recommendations</h4>
+                            <p class="feature-item__text">AI-generated career recommendations tailored to your unique profile.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15a2.25 2.25 0 0 1 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="feature-item__title">Development Suggestions</h4>
+                            <p class="feature-item__text">Actionable suggestions for courses, training, and skill development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 7. WHO SHOULD TAKE THIS TEST ===== -->
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section-title">Who Should Take This Test?</h2>
+                <p class="section-subtitle">AI SKILL SCAN is designed for anyone looking to make informed career decisions at any stage of their journey.</p>
+
+                <div class="icon-grid">
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg>
+                        </div>
+                        <p class="icon-grid__label">School Students</p>
+                    </div>
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Higher Secondary Students</p>
+                    </div>
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/></svg>
+                        </div>
+                        <p class="icon-grid__label">College Students</p>
+                    </div>
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Graduates</p>
+                    </div>
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Job Seekers</p>
+                    </div>
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 17.25c-2.97 0-5.81-.54-8.427-1.524a2.198 2.198 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 2.25 13.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 12.75 3h-1.5a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Working Professionals</p>
+                    </div>
+                    <div class="icon-grid__item">
+                        <div class="icon-grid__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/></svg>
+                        </div>
+                        <p class="icon-grid__label">Organizations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 8. WHY CHOOSE AI SKILL SCAN ===== -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Why Choose AI SKILL SCAN?</h2>
+                <p class="section-subtitle">Our platform combines cutting-edge AI technology with scientifically validated psychometric methods.</p>
+
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714a2.25 2.25 0 0 0 .659 1.591L19 14.5m-4.75-11.396c.251.023.501.05.75.082M12 3v5.714"/></svg>
+                        </div>
+                        <h3 class="card__title">AI Powered Analysis</h3>
+                        <p class="card__text">Advanced artificial intelligence analyzes your responses to provide accurate, personalized career insights.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714a2.25 2.25 0 0 0 .659 1.591L19 14.5m-4.75-11.396c.251.023.501.05.75.082M12 3v5.714m0 0a2.25 2.25 0 0 1-.659 1.591L7.5 14.25m4.5-3.536a2.25 2.25 0 0 0 .659 1.591L16.5 14.25M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12H18m-2.227-4.773 1.591-1.591M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z"/></svg>
+                        </div>
+                        <h3 class="card__title">Scientifically Designed Test</h3>
+                        <p class="card__text">Built on validated psychometric frameworks and methodologies trusted by career experts worldwide.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15a2.25 2.25 0 0 1 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"/></svg>
+                        </div>
+                        <h3 class="card__title">Comprehensive Career Report</h3>
+                        <p class="card__text">Receive a detailed report covering aptitude, personality, skills, and career recommendations.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"/></svg>
+                        </div>
+                        <h3 class="card__title">Online and Convenient</h3>
+                        <p class="card__text">Take the test anytime, anywhere. Our platform is accessible from any device with an internet connection.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+                        </div>
+                        <h3 class="card__title">Data-Driven Recommendations</h3>
+                        <p class="card__text">Every recommendation is backed by data analysis, ensuring relevant and accurate career guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 9. FINAL CTA ===== -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Find Your Ideal Career Path Today</h2>
+                <p>Take the AI SKILL SCAN Career Assessment and unlock your true potential with data-driven insights.</p>
+                <a href="take-test.html" class="btn btn--white">Take a Test</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER (shared via footer.js) ===== -->
+    <div id="footer-placeholder"></div>
+    <script src="scripts/footer.js"></script>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
