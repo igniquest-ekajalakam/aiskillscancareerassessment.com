@@ -87,6 +87,64 @@
             line-height: 1.5;
         }
         .permission-card__error.visible { display: block; }
+        .permission-card__error--blocked {
+            display: none;
+            margin-top: 20px;
+            padding: 20px 18px;
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 10px;
+            color: #5d4037;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .permission-card__error--blocked.visible { display: block; }
+        .permission-card__error--blocked strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #c62828;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        .permission-card__error--blocked ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .permission-card__error--blocked ol li {
+            margin-bottom: 6px;
+        }
+        .permission-card__error--blocked .browser-icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 16px;
+            height: 16px;
+        }
+        .permission-card__btn--reload {
+            display: none;
+            margin-top: 16px;
+            padding: 12px 28px;
+            background: #ff8f00;
+            color: #fff;
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(255, 143, 0, 0.35);
+            transition: all 0.3s ease;
+        }
+        .permission-card__btn--reload.visible { display: inline-flex; align-items: center; gap: 8px; }
+        .permission-card__btn--reload:hover {
+            background: #e65100;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 143, 0, 0.45);
+        }
+        .permission-card__btn--reload svg {
+            width: 18px;
+            height: 18px;
+        }
 
         /* ---- Iframe Section (hidden until permission granted) ---- */
         .iframe-section {
@@ -170,6 +228,19 @@
             <div id="permissionError" class="permission-card__error">
                 Camera access was denied. Please enable camera permissions in your browser settings and try again.
             </div>
+            <div id="permissionBlocked" class="permission-card__error--blocked">
+                <strong>Camera access is permanently blocked</strong>
+                <p style="margin:0 0 10px; text-align:center;">Your browser has remembered the &ldquo;Block&rdquo; choice. To fix this:</p>
+                <ol>
+                    <li>Click the <strong>lock icon</strong> <svg class="browser-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"/></svg> in the address bar (left of the URL)</li>
+                    <li>Find <strong>Camera</strong> and change it to <strong>Allow</strong></li>
+                    <li>Click the <strong>Reload Page</strong> button below</li>
+                </ol>
+            </div>
+            <button id="reloadPageBtn" class="permission-card__btn--reload" onclick="location.reload();">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182"/></svg>
+                Reload Page
+            </button>
         </div>
     </div>
 
@@ -197,43 +268,147 @@
     <!-- Camera Permission Logic -->
     <script>
     (function () {
-        const overlay     = document.getElementById('permissionOverlay');
-        const allowBtn    = document.getElementById('allowCameraBtn');
-        const errorBox    = document.getElementById('permissionError');
-        const iframeSection = document.getElementById('iframeSection');
-        const iframe      = document.getElementById('assessmentIframe');
-        const backBtn     = document.getElementById('backBtn');
+        var overlay        = document.getElementById('permissionOverlay');
+        var allowBtn       = document.getElementById('allowCameraBtn');
+        var errorBox       = document.getElementById('permissionError');
+        var blockedBox     = document.getElementById('permissionBlocked');
+        var reloadBtn      = document.getElementById('reloadPageBtn');
+        var iframeSection  = document.getElementById('iframeSection');
+        var iframe         = document.getElementById('assessmentIframe');
+        var backBtn        = document.getElementById('backBtn');
 
-        function requestCamera() {
-            // Reset error state
+        var cameraIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z"/></svg> ';
+
+        // Show the iframe and hide the overlay
+        function grantAccess() {
+            overlay.classList.add('hidden');
+            iframeSection.classList.remove('hidden');
+            backBtn.classList.remove('hidden');
+            iframe.src = iframe.getAttribute('data-src');
+        }
+
+        // Show the "permanently blocked" instructions
+        function showBlockedUI() {
             errorBox.classList.remove('visible');
-            allowBtn.textContent = 'Requesting…';
+            blockedBox.classList.add('visible');
+            reloadBtn.classList.add('visible');
+            allowBtn.style.display = 'none';
+        }
+
+        // Show the simple "denied" error with Try Again
+        function showDeniedUI() {
+            blockedBox.classList.remove('visible');
+            reloadBtn.classList.remove('visible');
+            errorBox.classList.add('visible');
+            allowBtn.innerHTML = cameraIcon + 'Try Again';
+            allowBtn.disabled = false;
+            allowBtn.style.display = '';
+        }
+
+        // Reset all error states
+        function resetErrorUI() {
+            errorBox.classList.remove('visible');
+            blockedBox.classList.remove('visible');
+            reloadBtn.classList.remove('visible');
+            allowBtn.style.display = '';
+        }
+
+        // Main camera request flow
+        function requestCamera() {
+            resetErrorUI();
+            allowBtn.textContent = 'Requesting\u2026';
             allowBtn.disabled = true;
 
-            navigator.mediaDevices.getUserMedia({ video: {} })
+            // Check permission state first (if Permissions API is supported)
+            if (navigator.permissions && navigator.permissions.query) {
+                navigator.permissions.query({ name: 'camera' })
+                    .then(function (permStatus) {
+                        if (permStatus.state === 'denied') {
+                            // Permanently blocked — don't bother calling getUserMedia
+                            showBlockedUI();
+                            return;
+                        }
+                        // State is 'prompt' or 'granted' — proceed with getUserMedia
+                        callGetUserMedia();
+                    })
+                    .catch(function () {
+                        // Permissions API not supported for camera — fall back
+                        callGetUserMedia();
+                    });
+            } else {
+                // Permissions API not available — fall back
+                callGetUserMedia();
+            }
+        }
+
+        function callGetUserMedia() {
+            navigator.mediaDevices.getUserMedia({ video: true })
                 .then(function (stream) {
-                    // Permission granted — stop the camera immediately (we only need permission)
+                    // Permission granted — stop camera immediately (we only need the permission)
                     stream.getTracks().forEach(function (track) { track.stop(); });
-
-                    // Hide overlay, show iframe and back button
-                    overlay.classList.add('hidden');
-                    iframeSection.classList.remove('hidden');
-                    backBtn.classList.remove('hidden');
-
-                    // Load the assessment page into the iframe
-                    iframe.src = iframe.getAttribute('data-src');
+                    grantAccess();
                 })
                 .catch(function () {
-                    // Permission denied or error
-                    errorBox.classList.add('visible');
-                    allowBtn.innerHTML =
-                        '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z"/></svg> ' +
-                        'Try Again';
-                    allowBtn.disabled = false;
+                    // Denied — check if it's permanent
+                    checkIfPermanentlyBlocked();
                 });
         }
 
+        function checkIfPermanentlyBlocked() {
+            if (navigator.permissions && navigator.permissions.query) {
+                navigator.permissions.query({ name: 'camera' })
+                    .then(function (permStatus) {
+                        if (permStatus.state === 'denied') {
+                            showBlockedUI();
+                        } else {
+                            showDeniedUI();
+                        }
+                    })
+                    .catch(function () {
+                        showDeniedUI();
+                    });
+            } else {
+                showDeniedUI();
+            }
+        }
+
+        // On page load: check if permission was already granted (auto-skip overlay)
+        function initPermissionCheck() {
+            if (navigator.permissions && navigator.permissions.query) {
+                navigator.permissions.query({ name: 'camera' })
+                    .then(function (permStatus) {
+                        if (permStatus.state === 'granted') {
+                            // Already allowed — skip overlay entirely
+                            grantAccess();
+                        } else if (permStatus.state === 'denied') {
+                            // Already permanently blocked — show instructions immediately
+                            showBlockedUI();
+                        }
+
+                        // Listen for permission changes (e.g. user resets via browser settings)
+                        permStatus.onchange = function () {
+                            if (permStatus.state === 'granted') {
+                                grantAccess();
+                            } else if (permStatus.state === 'denied') {
+                                showBlockedUI();
+                            } else {
+                                // Reset to prompt state — show the Allow button again
+                                resetErrorUI();
+                                allowBtn.innerHTML = cameraIcon + 'Allow Camera &amp; Continue';
+                                allowBtn.disabled = false;
+                            }
+                        };
+                    })
+                    .catch(function () {
+                        // Permissions API not available for camera — do nothing, show overlay as normal
+                    });
+            }
+        }
+
         allowBtn.addEventListener('click', requestCamera);
+
+        // Run initial check
+        initPermissionCheck();
     })();
     </script>
 </body>
